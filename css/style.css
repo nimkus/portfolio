@@ -8,9 +8,10 @@
     /* COLOR THEME */
 
     /* highlight colors */
-    --salmon-neon: #f22;
-    --purple: #538;
-    --mint-neon: #5fc;
+    --clr-accent: #aeaeae;
+    --clr-base: rgb(110, 69, 173);
+    --clr-highlight: #e6308a;
+    --mint-neon: #07cadc;
 
     /* base colors */
     --white: #fff;
@@ -19,7 +20,7 @@
 
     /* FONTS */
     --font-h: "Yeseva One", serif;
-    --font-p: "Roboto", sans-serif;
+    --font-p: "Raleway", sans-serif;
 }
 
 /* --------------------------------------------------
@@ -43,7 +44,7 @@ h1 {
     font-family: var(--font-h);
     font-size: 2.5em;
     font-style: normal;
-    color: var(--salmon-neon);
+    color: var(--clr-accent);
     padding: 0;
     margin: 30px;
 }
@@ -58,7 +59,7 @@ p {
 .button {
     display: inline-block;
     border: none;
-    background-color: var(--salmon-neon);
+    background-color: var(--clr-base);
     color: var(--white);
     font-family: inherit;
     font-weight: bold;
@@ -72,33 +73,33 @@ p {
 .button:hover {
     cursor: pointer;
     text-decoration: none;
-    background-color: var(--purple);
+    background-color: var(--clr-base);
     color: var(--white);
 }
 
 .button:focus {
-    outline: 2px solid var(--purple);
+    outline: 2px solid var(--clr-base);
 }
 
 .button:active {
-    color: var(--mint-neon);
+    color: var(--clr-highlight);
 }
 
 /*  LINKS
     Proper order: a:visited, a:hover (and a:focus), a:active */
 a {
-    color: var(--purple);
+    color: var(--clr-base);
     text-decoration: none;
     transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: var(--salmon-neon);
-    text-decoration: underline;
+    color: var(--clr-highlight);
+    text-decoration: none;
 }
 
 a:active {
-    color: var(--mint-neon);
+    color: var(--clr-highlight);
 }
 
 /* --------------------------------------------------
@@ -139,7 +140,7 @@ a:active {
 }
 
 .site-nav-list__item--active {
-    color: var(--salmon-neon);
+    color: var(--clr-accent);
 }
 
 /* Animation: Text-Fill for Hovering on Nav-Text */
@@ -147,37 +148,19 @@ a:active {
     position: relative;
 }
 
-.site-nav-list__item:hover {
-    color: var(--purple);
-    text-decoration: none;
-}
-
-.site-nav-list__item--active:hover {
-    color: var(--salmon-neon);
-    text-decoration: none;
-}
-
 .site-nav-list__item::before {
     content: attr(data-text);
     position: absolute;
-    color: var(--salmon-neon);
+    color: var(--clr-highlight);
     background-color: var(--white);
     height: 0;
     overflow: hidden;
     transition: height 0.3s ease-in-out, border-bottom 0s 0.2s;
 }
 
-.site-nav-list__item--active::before {
-    color: var(--purple);
-}
-
 .site-nav-list__item:hover::before {
     height: 100%;
-    border-bottom: 2px solid var(--salmon-neon);
-}
-
-.site-nav-list__item--active:hover::before {
-    border-bottom: 2px solid var(--purple);
+    border-bottom: 2px solid var(--clr-highlight);
 }
 
 /* --------------------------------------------------
@@ -236,91 +219,130 @@ a:active {
 }
 
 /* Skill Reel, Text Animation */
+.skill-reel {
+    font-weight: 800;
+    font-size: 2.4em;
+    font-style: normal;
+    color: #ccc;
+}
+
+.skill-reel a {
+    position: relative;
+    text-decoration: none;
+    visibility: none;
+}
+
+.skill-reel a::before {
+    position: absolute;
+    bottom: -15px;
+    border-bottom: 10px solid var(--mint-neon);
+    content: attr(data-text);
+    color: transparent;
+    animation: skill-underline 15s ease-in-out infinite;
+}
+
 .skill-reel a:nth-child(1) {
-    animation: skill1 15s infinite;
-    color: red;
+    animation: skill1 15s ease-in-out infinite;
 }
 
 .skill-reel a:nth-child(2) {
-    animation: skill2 15s infinite;
+    animation: skill2 15s ease-in-out infinite;
 }
 
 .skill-reel a:nth-child(3) {
-    animation: skill3 15s infinite;
+    animation: skill3 15s ease-in-out infinite;
+}
+
+@keyframes skill-underline {
+    0%,
+    100% {
+        width: 0;
+    }
+
+    5%,
+    28% {
+        width: 100%;
+    }
+
+    33% {
+        width: 0;
+    }
+
+    38%,
+    61% {
+        width: 100%;
+    }
+
+    66% {
+        width: 0;
+    }
+
+    71%,
+    94% {
+        width: 100%;
+    }
 }
 
 @keyframes skill1 {
     0% {
-        display: inline;
         opacity: 0;
+        display: inline;
     }
 
-    10% {
+    15%,
+    28% {
         opacity: 1;
     }
 
-    15% {
-        opacity: 0;
-        display: none;
-    }
-
+    33%,
     100% {
+        opacity: 0;
         display: none;
     }
 }
 
 @keyframes skill2 {
-    0% {
+    0%,
+    33% {
         display: none;
     }
 
-    15% {
-        display: none;
-    }
-
-    16% {
+    34% {
         display: inline;
         opacity: 0;
     }
 
-    25% {
+    39%,
+    61% {
         opacity: 1;
     }
 
-    40% {
-        opacity: 0;
-        display: none;
-    }
-
+    66%,
     100% {
+        opacity: 0;
         display: none;
     }
 }
 
 @keyframes skill3 {
-    0% {
+    0%,
+    66% {
         display: none;
     }
 
-    40% {
-        display: none;
-    }
-
-    41% {
+    67% {
         display: inline;
         opacity: 0;
     }
 
-    50% {
+    72%,
+    94% {
         opacity: 1;
     }
 
-    75% {
-        opacity: 0;
-        display: none;
-    }
-
+    99%,
     100% {
+        opacity: 0;
         display: none;
     }
 }
@@ -390,15 +412,15 @@ a:active {
 
 @keyframes color-change-sun {
     0% {
-        fill: var(--purple);
+        fill: var(--clr-base);
     }
 
     50% {
-        fill: var(--mint-neon);
+        fill: var(--clr-highlight);
     }
 
     100% {
-        fill: var(--salmon-neon);
+        fill: var(--clr-accent);
     }
 }
 
@@ -448,7 +470,7 @@ a:active {
     margin: 30px;
     padding: 5px 30px 10px 20px;
     flex-direction: column;
-    background-color: var(--purple);
+    background-color: var(--clr-base);
     color: var(--white);
 }
 
@@ -469,7 +491,7 @@ a:active {
 
 #contact-form .button:hover {
     background-color: var(--white);
-    color: var(--purple);
+    color: var(--clr-base);
     border-radius: 3px;
 }
 
