@@ -10,7 +10,8 @@
     /* highlight colors */
     --clr-accent: #aeaeae;
     --clr-base: rgb(110, 69, 173);
-    --clr-highlight: #e6308a;
+    --clr-highlight: #07cadc;
+    --clr-highlight2: #e6308a;
     --mint-neon: #07cadc;
 
     /* base colors */
@@ -44,7 +45,7 @@ h1 {
     font-family: var(--font-h);
     font-size: 2.5em;
     font-style: normal;
-    color: var(--clr-accent);
+    color: var(--clr-highlight);
     padding: 0;
     margin: 30px;
 }
@@ -73,16 +74,12 @@ p {
 .button:hover {
     cursor: pointer;
     text-decoration: none;
-    background-color: var(--clr-base);
+    background-color: var(--clr-highlight);
     color: var(--white);
 }
 
-.button:focus {
-    outline: 2px solid var(--clr-base);
-}
-
 .button:active {
-    color: var(--clr-highlight);
+    background-color: var(--clr-highlight2);
 }
 
 /*  LINKS
@@ -99,7 +96,7 @@ a:hover {
 }
 
 a:active {
-    color: var(--clr-highlight);
+    color: var(--clr-highlight2);
 }
 
 /* --------------------------------------------------
@@ -113,6 +110,8 @@ a:active {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    font-family: var(--font-h);
+    text-transform: lowercase;
     font-size: 1.1em;
 }
 
@@ -140,7 +139,7 @@ a:active {
 }
 
 .site-nav-list__item--active {
-    color: var(--clr-accent);
+    color: var(--clr-highlight);
 }
 
 /* Animation: Text-Fill for Hovering on Nav-Text */
@@ -151,7 +150,7 @@ a:active {
 .site-nav-list__item::before {
     content: attr(data-text);
     position: absolute;
-    color: var(--clr-highlight);
+    color: var(--clr-highlight2);
     background-color: var(--white);
     height: 0;
     overflow: hidden;
@@ -160,7 +159,7 @@ a:active {
 
 .site-nav-list__item:hover::before {
     height: 100%;
-    border-bottom: 2px solid var(--clr-highlight);
+    border-bottom: 2px solid var(--clr-highlight2);
 }
 
 /* --------------------------------------------------
@@ -209,6 +208,13 @@ a:active {
     margin: 50px auto;
 }
 
+.profile p {
+    font-family: var(--font-p);
+    font-weight: 800;
+    font-size: 2em;
+    font-style: normal;
+}
+
 /* Profile Picture */
 .profile-pic img {
     float: left;
@@ -219,133 +225,112 @@ a:active {
 }
 
 /* Skill Reel, Text Animation */
-.skill-reel {
-    font-weight: 800;
-    font-size: 2.4em;
-    font-style: normal;
-    color: #ccc;
-}
-
 .skill-reel a {
     position: relative;
-    text-decoration: none;
-    visibility: none;
+    color: transparent;
 }
 
 .skill-reel a::before {
     position: absolute;
-    bottom: -15px;
-    border-bottom: 10px solid var(--mint-neon);
+    box-sizing: content-box;
+    border-bottom: 8px solid var(--mint-neon);
     content: attr(data-text);
-    color: transparent;
+    color: var(--clr-base);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: background-color 0.5s ease-in-out, border-bottom 0.5s ease-in-out, color 0.1s;
     animation: skill-underline 15s ease-in-out infinite;
 }
 
 .skill-reel a:nth-child(1) {
-    animation: skill1 15s ease-in-out infinite;
+    animation: skill1 15s infinite;
 }
 
 .skill-reel a:nth-child(2) {
-    animation: skill2 15s ease-in-out infinite;
+    animation: skill2 15s infinite;
 }
 
 .skill-reel a:nth-child(3) {
-    animation: skill3 15s ease-in-out infinite;
+    animation: skill3 15s infinite;
 }
 
 @keyframes skill-underline {
     0%,
     100% {
         width: 0;
+        color: transparent;
     }
 
     5%,
     28% {
         width: 100%;
+        color: transparent;
+    }
+
+    15%,
+    23% {
+        color: var(--clr-base);
     }
 
     33% {
         width: 0;
-    }
-
-    38%,
-    61% {
-        width: 100%;
-    }
-
-    66% {
-        width: 0;
-    }
-
-    71%,
-    94% {
-        width: 100%;
+        color: transparent;
     }
 }
 
 @keyframes skill1 {
     0% {
-        opacity: 0;
         display: inline;
     }
 
-    15%,
-    28% {
-        opacity: 1;
-    }
-
-    33%,
+    32%,
     100% {
-        opacity: 0;
         display: none;
     }
 }
 
 @keyframes skill2 {
     0%,
-    33% {
+    32% {
         display: none;
     }
 
-    34% {
+    33% {
         display: inline;
-        opacity: 0;
-    }
-
-    39%,
-    61% {
-        opacity: 1;
     }
 
     66%,
     100% {
-        opacity: 0;
         display: none;
     }
 }
 
 @keyframes skill3 {
     0%,
-    66% {
+    65% {
         display: none;
     }
 
-    67% {
+    66% {
         display: inline;
-        opacity: 0;
     }
 
-    72%,
-    94% {
-        opacity: 1;
-    }
-
-    99%,
     100% {
-        opacity: 0;
         display: none;
     }
 }
+
+/* Animation on hover */
+.skill-reel a:hover::before {
+    border-bottom: none;
+    background-color: var(--clr-highlight);
+    color: var(--white) !important;
+    /* animation-play-state: paused; */
+}
+
+/* .skill-reel a:nth-child(n) {
+    animation-play-state: paused;
+} */
 
 /* ///// WORK-PAGE */
 
