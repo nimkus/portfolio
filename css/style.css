@@ -218,9 +218,7 @@ a:active {
      PAGES
    ------------------------------------------------ */
 
-/* ///////////////////
-     HOME-PAGE
-/////////////////// */
+/* ///// HOME-PAGE */
 
 /* Profile Container */
 .profile {
@@ -237,9 +235,97 @@ a:active {
     border-radius: 50%;
 }
 
-/* ///////////////////
-     WORK-PAGE
-/////////////////// */
+/* Skill Reel, Text Animation */
+.skill-reel a:nth-child(1) {
+    animation: skill1 15s infinite;
+    color: red;
+}
+
+.skill-reel a:nth-child(2) {
+    animation: skill2 15s infinite;
+}
+
+.skill-reel a:nth-child(3) {
+    animation: skill3 15s infinite;
+}
+
+@keyframes skill1 {
+    0% {
+        display: inline;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    15% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes skill2 {
+    0% {
+        display: none;
+    }
+
+    15% {
+        display: none;
+    }
+
+    16% {
+        display: inline;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes skill3 {
+    0% {
+        display: none;
+    }
+
+    40% {
+        display: none;
+    }
+
+    41% {
+        display: inline;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+        display: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+/* ///// WORK-PAGE */
 
 /* Project-grid */
 
@@ -275,9 +361,7 @@ a:active {
     }
 }
 
-/* ///////////////////
-     ABOUT-PAGE
-/////////////////// */
+/* ///// ABOUT-PAGE */
 
 .about-page {
     max-width: var(--breakLarge);
@@ -348,9 +432,7 @@ a:active {
     }
 }
 
-/* ///////////////////
-     CONTACT-PAGE
-/////////////////// */
+/* ///// CONTACT-PAGE */
 
 .contact-page {
     max-width: var(--breakLarge);
