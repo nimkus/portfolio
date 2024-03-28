@@ -17,6 +17,7 @@
     /* base colors */
     --white: #fff;
     --gray-light: rgb(240, 240, 240);
+    --gray-dark: rgb(200, 200, 200);
     --gray-transparent: rgba(0, 0, 0, 0.2);
 
     /* FONTS */
@@ -103,17 +104,60 @@ a:active {
      MAIN NAVIGATION
    ------------------------------------------------ */
 
-.page-header {
-    background: var(--white);
-    border-bottom: 1px solid var(--gray-transparent);
+header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+    justify-content: flex-end;
     font-family: var(--font-h);
     text-transform: lowercase;
     font-size: 1.1em;
 }
+
+.page-header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gray-dark);
+    /* border-bottom: 1px solid var(--gray-transparent); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    clip-path: rect(0 0 40px 50px);
+}
+
+/* Site Navigation Toggle */
+#site-nav__toggle:checked ~ .page-header {
+    clip-path: circle(75%);
+}
+
+.menu-toogle {
+    z-index: 2;
+    position: relative;
+}
+
+#site-nav__toggle {
+    display: none;
+}
+
+#site-nav__toggle ~ .menu-toogle {
+    position: absolute;
+    padding: 20px;
+}
+
+#site-nav__toggle:checked ~ .menu-toogle {
+    color: transparent;
+}
+
+#site-nav__toggle:checked ~ .menu-toogle i::before {
+    content: "\f00d";
+    font-size: 1em;
+    color: var(--clr-highlight);
+}
+
+/* Styles for Nav Items */
 
 .page-header__item {
     flex: 0 1 auto;
@@ -325,6 +369,7 @@ a:active {
     border-bottom: none;
     background-color: var(--clr-highlight);
     color: var(--white) !important;
+
     /* animation-play-state: paused; */
 }
 
