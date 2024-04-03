@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="uuid-7a7b4412-36ee-4bfe-8137-e98f77a33eb3" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="106mm" height="106mm" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300.47 300.47">
+  <defs>
+    <style>
+      .uuid-9c39a5c9-0e15-457b-92d2-d066fef7b9cc {
+        mask: url(#uuid-77b7a668-59a8-47b3-8cd0-9ccbd519fc49);
+      }
+
+      .uuid-8ce94883-c63e-41d6-ba20-a44d83ff330e {
+        mask: url(#uuid-11313c87-075f-46b4-b554-90045dec1e81);
+      }
+
+      .uuid-12c1d2bc-a1c1-40d2-ae71-a6bdc8035b80, .uuid-eafe0083-155e-4f35-8ebc-107559f446e2 {
+        fill: none;
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+        stroke-width: 10px;
+      }
+
+      .uuid-eafe0083-155e-4f35-8ebc-107559f446e2 {
+        stroke-linecap: round;
+      }
+
+      .uuid-2263b72e-a89a-4a46-bd38-c2b2b8182db5 {
+        fill: #fff;
+        stroke-width: 0px;
+      }
+    </style>
+    <mask id="uuid-77b7a668-59a8-47b3-8cd0-9ccbd519fc49" data-name="mask" x="83.24" y="-.46" width="144.37" height="126.8" maskUnits="userSpaceOnUse">
+      <polygon class="uuid-2263b72e-a89a-4a46-bd38-c2b2b8182db5" points="173.54 90.54 203.96 108.92 227.62 49.63 192.08 -.46 90.77 8.95 83.24 71.05 108.79 114.01 142.54 101.41 173.54 90.54"/>
+    </mask>
+    <mask id="uuid-11313c87-075f-46b4-b554-90045dec1e81" data-name="mask-1" x="72.85" y="174.13" width="144.37" height="126.8" maskUnits="userSpaceOnUse">
+      <polygon class="uuid-2263b72e-a89a-4a46-bd38-c2b2b8182db5" points="126.94 209.93 96.51 191.55 72.85 250.85 108.39 300.93 209.7 291.53 217.23 229.42 191.68 186.46 157.93 199.06 126.94 209.93"/>
+    </mask>
+  </defs>
+  <g class="uuid-9c39a5c9-0e15-457b-92d2-d066fef7b9cc">
+    <path class="uuid-12c1d2bc-a1c1-40d2-ae71-a6bdc8035b80" d="m188.63,104.11c4.81-5.51,8.2-11.78,10.21-18.35,5.6-18.37.37-39.15-15.04-52.59-20.93-18.26-52.69-16.09-70.95,4.84-18.26,20.93-16.09,52.69,4.84,70.95,20.93,18.26,52.69,16.09,70.95-4.84Z"/>
+  </g>
+  <path class="uuid-eafe0083-155e-4f35-8ebc-107559f446e2" d="m117.69,108.94l148.8,129.8c0-123.76,0-185.58,0-185.58,0,0,0,61.88,0,185.58"/>
+  <g class="uuid-8ce94883-c63e-41d6-ba20-a44d83ff330e">
+    <path class="uuid-12c1d2bc-a1c1-40d2-ae71-a6bdc8035b80" d="m111.84,196.36c-4.81,5.51-8.2,11.78-10.21,18.35-5.6,18.37-.37,39.15,15.04,52.59,20.93,18.26,52.69,16.09,70.95-4.84s16.09-52.69-4.84-70.95c-20.93-18.26-52.69-16.09-70.95,4.84Z"/>
+  </g>
+  <path class="uuid-eafe0083-155e-4f35-8ebc-107559f446e2" d="m182.78,191.53L33.98,61.73c0,123.61,0,185.37,0,185.37,0,0,0-61.81,0-185.37"/>
+</svg>
