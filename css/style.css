@@ -48,13 +48,13 @@ h1 {
     font-style: normal;
     color: var(--clr-highlight);
     padding: 0;
-    margin: 30px;
+    margin: 10px 20px 30px;
 }
 
 p {
     line-height: 1.5;
     padding: 0;
-    margin: 30px;
+    margin: 0 20px 30px;
 }
 
 /* BUTTONS */
@@ -238,9 +238,17 @@ header {
 /* ///// HOME-PAGE */
 
 /* Profile Container */
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+}
+
 .profile {
     max-width: var(--breakLarge);
     margin: 50px auto;
+    display: flex;
+    align-items: center;
 }
 
 .profile p {
@@ -252,16 +260,14 @@ header {
 
 /* Profile Picture */
 .profile-pic img {
-    float: left;
     margin: 20px 30px;
     max-width: 200px;
-    height: auto;
     border-radius: 50%;
 }
 
 /* Skill Reel, Text Animation */
 .skill-reel a {
-    position: relative;
+    position: absolute;
     color: transparent;
 }
 
@@ -277,15 +283,15 @@ header {
     animation: skill-underline 15s ease-in-out infinite;
 }
 
-.skill-reel a:nth-child(1) {
+.skill1 {
     animation: skill1 15s infinite;
 }
 
-.skill-reel a:nth-child(2) {
+.skill2 {
     animation: skill2 15s infinite;
 }
 
-.skill-reel a:nth-child(3) {
+.skill3 {
     animation: skill3 15s infinite;
 }
 
@@ -326,11 +332,11 @@ header {
 
 @keyframes skill2 {
     0%,
-    32% {
+    33% {
         display: none;
     }
 
-    33% {
+    34% {
         display: inline;
     }
 
@@ -342,11 +348,11 @@ header {
 
 @keyframes skill3 {
     0%,
-    65% {
+    66% {
         display: none;
     }
 
-    66% {
+    67% {
         display: inline;
     }
 
@@ -409,7 +415,7 @@ header {
 
 .about-page {
     max-width: var(--breakLarge);
-    margin: 50px auto;
+    margin: 0 auto;
 }
 
 .cv-table {
@@ -423,6 +429,9 @@ header {
 }
 
 /* Animation: Sun (SVG Berlin) */
+.about-page object {
+    padding: 0 140px;
+}
 
 .sun {
     animation-duration: 10s;

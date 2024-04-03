@@ -11,7 +11,7 @@
     <!-- Match window size to device and resets pixel size for retina-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Nicole Schimkus - Portfolio</title>
+    <title>Nicole Schimkus</title>
     <link rel="shortcut icon" href="img/nicole-schimkus-logo.png" type="image/x-icon">
 
     <!-- Normalizing CSS & Style Sheet -->
@@ -29,28 +29,46 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <!-- This Font is ony used temporarily (for testing purposes)-->
-    <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome Icon Font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="page-header">
+    <!-- PAGE HEADER -->
+    <header>
+        <!-- Header has menu that becomes visible through toggle -->
+        <div class="page-header__before-toogle">
+            <div>
+                <!--Webseite-Logo + Home-Button-->
+                <a href="index.html" class="site-logo" aria-label="Home-Button">
+                    <img src="img/nicole-schimkus-logo.svg"
+                        alt="Personal logo of Nicole Schimkus, a simple logo made of lines that form the initials of my name">
+                </a>
+            </div>
+            <div>
+                <!-- Toggle Menu on and off -->
+                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle" aria-label="button that toggles site navigation on and off">
+                <label for="site-nav__toggle" class="menu-toogle site-nav__toggle">menu<i class="fas"></i></label>
+            </div>
+        </div>
 
-        <!--Webseite-Logo + Home-Button-->
-        <a href="index.html" class="page-header__item" aria-label="Home-Button">
-            <img src="img/nicole-schimkus-logo.png"
-                alt="Personal logo of Nicole Schimkus, a simple logo made of lines that form the initials of my name">
-        </a>
 
-        <nav class="site-nav page-header__item">
-            <!--Navigation to pages of the website-->
+        <!-- Page Navigation -->
+        <nav class="site-nav">
             <ul role="menubar" class="site-nav__list">
                 <!--Homepage-->
                 <li role="presentation">
-                    <a href="index.html" role="menuitem" class="site-nav-list__item site-nav-list__item"
+                    <a href="index.html" role="menuitem" class="site-nav-list__item"
                         data-text="Home">Home</a>
                 </li>
                 <!--Work page-->
@@ -59,7 +77,8 @@
                 </li>
                 <!--About page-->
                 <li role="presentation">
-                    <a href="about.html" role="menuitem" class="site-nav-list__item" data-text="About Me">About Me</a>
+                    <a href="about.html" role="menuitem" class="site-nav-list__item" data-text="About Me">About
+                        Me</a>
                 </li>
                 <!--Contact page-->
                 <li role="presentation">
@@ -67,6 +86,7 @@
                 </li>
             </ul>
         </nav>
+
     </header>
 
     <!-- MAIN CONTENT -->
