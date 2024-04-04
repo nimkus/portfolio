@@ -14,7 +14,7 @@
         fill: none;
         stroke: #231f20;
         stroke-miterlimit: 10;
-        stroke-width: 10px;
+        stroke-width: 14px;
       }
 
       .uuid-eafe0083-155e-4f35-8ebc-107559f446e2 {

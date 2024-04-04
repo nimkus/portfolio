@@ -25,24 +25,26 @@
     <!-- The Link Type rel="preconnect" is used so that the linked content can be fetched more quickly. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font: Yeseva, serif -->
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <!-- Font: Roboto, serif -->
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <!-- Font: Raleway, serif -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
+    <!-- Font: Lora, serif -->
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome Icon Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 </head>
 
-<body>
+<body class="home-page">
 
     <!-- PAGE HEADER -->
     <header>
@@ -57,7 +59,8 @@
             </div>
             <div>
                 <!-- Toggle Menu on and off -->
-                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle" aria-label="button that toggles site navigation on and off">
+                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle"
+                    aria-label="button that toggles site navigation on and off">
                 <label for="site-nav__toggle" class="menu-toogle site-nav__toggle">menu<i class="fas"></i></label>
             </div>
         </div>
@@ -68,8 +71,7 @@
             <ul role="menubar" class="site-nav__list">
                 <!--Homepage-->
                 <li role="presentation">
-                    <a href="index.html" role="menuitem" class="site-nav-list__item"
-                        data-text="Home">Home</a>
+                    <a href="index.html" role="menuitem" class="site-nav-list__item" data-text="Home">Home</a>
                 </li>
                 <!--Work page-->
                 <li role="presentation">
@@ -82,34 +84,35 @@
                 </li>
                 <!--Contact page-->
                 <li role="presentation">
-                    <a href="contact.html" role="menuitem" class="site-nav-list__item site-nav-list__item--active" data-text="Contact">Contact</a>
+                    <a href="contact.html" role="menuitem" class="site-nav-list__item--active" data-text="Contact">Contact</a>
                 </li>
             </ul>
         </nav>
-
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="contact-page">
-        <h1>Contact</h1>
+    <main class="contact-content">
+        <div>
+            <h1>Get in touch</h1>
 
-        <!--Contact information-->
-        <p>
-            <!--to-do: research ways to protect personal data on my website from attracting spam-->
-            Nicole Schimkus<br>
-            Street Number<br>
-            00000 Berlin<br>
-            Germany<br>
-            <br>
-            Phone <a href="tel:+49 30 4849 2016" aria-label="telephone number">+49 30 4849 2016</a><br>
-            Skype <a href="skype:hello.careerfoundry">skype-handle</a><br>
-            Mail <a href="mailto:nicoleschimkus@gmail.com">nicoleschimkus@gmail.com</a>
-        </p>
+            <!--Contact information-->
+            <p>
+                <!--to-do: research ways to protect personal data on my website from attracting spam-->
+                Nicole Schimkus<br>
+                Street Number<br>
+                00000 Berlin<br>
+                Germany<br>
+                <br>
+                Phone <a href="tel:+49 30 4849 2016" aria-label="telephone number">+49 30 4849 2016</a><br>
+                Skype <a href="skype:hello.careerfoundry">skype-handle</a><br>
+                Mail <a href="mailto:nicoleschimkus@gmail.com">nicoleschimkus@gmail.com</a>
+            </p>
 
-        <!--Call to Action-->
-        <a href="mailto:nicoleschimkus@gmail.com" class="button contact-button">Contact me</a>
+            <!--Call to Action-->
+            <a href="mailto:nicoleschimkus@gmail.com" class="button contact-me-button">Contact me</a>
+        </div>
 
-        <!--Form-->
+        <!-- Contact Form-->
         <form action="" method="post" id="contact-form">
             <label class="standart-label" for="contact-email">Email:</label>
             <input type="email" id="contact-email" class="contact-field" required>
@@ -121,7 +124,7 @@
 
             <label class="standart-label" for="contact-message">Message:</label>
             <textarea id="contact-message" class="contact-field" required maxlength="300" rows="8" cols="30"></textarea>
-            <input type="submit" class="button" value="Send message">
+            <input type="submit" class="button contact-form-button" value="Send message">
         </form>
     </main>
 

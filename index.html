@@ -25,17 +25,19 @@
     <!-- The Link Type rel="preconnect" is used so that the linked content can be fetched more quickly. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Font: Yeseva, serif -->
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <!-- Font: Roboto, serif -->
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <!-- Font: Raleway, serif -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
+    <!-- Font: Lora, serif -->
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome Icon Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -57,7 +59,8 @@
             </div>
             <div>
                 <!-- Toggle Menu on and off -->
-                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle" aria-label="button that toggles site navigation on and off">
+                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle"
+                    aria-label="button that toggles site navigation on and off">
                 <label for="site-nav__toggle" class="menu-toogle site-nav__toggle">menu<i class="fas"></i></label>
             </div>
         </div>
@@ -68,8 +71,7 @@
             <ul role="menubar" class="site-nav__list">
                 <!--Homepage-->
                 <li role="presentation">
-                    <a href="index.html" role="menuitem" class="site-nav-list__item site-nav-list__item--active"
-                        data-text="Home">Home</a>
+                    <a href="index.html" role="menuitem" class="site-nav-list__item--active" data-text="Home" data-text-2="Home2">Home</a>
                 </li>
                 <!--Work page-->
                 <li role="presentation">
@@ -86,13 +88,14 @@
                 </li>
             </ul>
         </nav>
-
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="profile">
 
-        <!--Portrait-->
+        <!-- Handdrawn Circle for Decoration -->
+        <img src="img/circle_handdrawn.svg" class="circle" alt="Handdrawn circle for decoration" role="presentation">
+        <!-- Portrait -->
         <figure class="profile-pic">
             <!--Portrait of Author + alt description-->
             <img src="img/nicole-schimkus-portrait.png"
@@ -103,9 +106,10 @@
         <article>
             <!-- Welcome Text, Call to action: Skill-reel (preliminary: links will lead to different pages in the future)-->
             <h1 class="skill-reel">Hej, my name is Nicole.<br>
-            I love to&nbsp; 
+                I love to&nbsp;
                 <a href="work.html" class="skill1" aria-label="Link to go to #page" data-text="design.">design.</a>
-                <a href="work.html" class="skill2" aria-label="Link to go to #page" data-text="do research.">do research.</a>
+                <a href="work.html" class="skill2" aria-label="Link to go to #page" data-text="do research.">do
+                    research.</a>
                 <a href="work.html" class="skill3" aria-label="Link to go to #page" data-text="teach.">teach.</a>
             </h1>
         </article>
