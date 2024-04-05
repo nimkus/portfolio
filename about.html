@@ -32,12 +32,10 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- Font: Raleway, serif -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font: Lora, serif -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome Icon Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -50,21 +48,20 @@
     <header>
         <!-- Header has menu that becomes visible through toggle -->
         <div class="page-header__before-toogle">
-            <div>
+            <div class="site-logo">
                 <!--Webseite-Logo + Home-Button-->
-                <a href="index.html" class="site-logo" aria-label="Home-Button">
+                <a href="index.html" aria-label="Home-Button">
                     <img src="img/nicole-schimkus-logo.svg"
-                        alt="Personal logo of Nicole Schimkus, a simple logo made of lines that form the initials of my name">
+                        alt="Personal logo of Nicole Schimkus made of lines that form the initials N and S">
                 </a>
             </div>
-            <div>
+            <div class="test">
                 <!-- Toggle Menu on and off -->
-                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle"
-                    aria-label="button that toggles site navigation on and off">
-                <label for="site-nav__toggle" class="menu-toogle site-nav__toggle">menu<i class="fas"></i></label>
+                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle" role="checkbox"
+                    aria-label="toggles site navigation on and off">
+                <label for="site-nav__toggle" class="toogle-label site-nav__toggle">menu<i class="fas"></i></label>
             </div>
         </div>
-
 
         <!-- Page Navigation -->
         <nav class="site-nav">
@@ -101,59 +98,7 @@
 
         </p>
 
-        <!-- List of Skills -->
-        <!-- <table class="cv-table">
-            <caption>
-                Things you should to know
-            </caption>
-            <colgroup>
-                <col />
-                <col span="3" class="Skillsets">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th scope="row">ID</th>
-                    <th scope="row">Skills</th>
-                    <th scope="row">Years of Experience</th>
-                    <th scope="row">Level of Expertise</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="col">1</th>
-                    <td>HTML</td>
-                    <td>3</td>
-                    <td>Advanced</td>
-                </tr>
-                <tr>
-                    <th scope="col">2</th>
-                    <td>CSS</td>
-                    <td>2</td>
-                    <td>Intermediate</td>
-                </tr>
-                <tr>
-                    <th scope="col">3</th>
-                    <td>JavaScript</td>
-                    <td>1</td>
-                    <td>Beginner</td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <th scrope="row">Rnd</th>
-                    <td>xxx</td>
-                    <td>xxx</td>
-                    <td>xxx</td>
-                </tr>
-            </tfoot>
-        </table> -->
-
         <a href="files/cv.pdf" class="button cv-button" download>Download my CV</a>
-
-<!--         <object type="image/svg+xml" data="img/berlin.svg">
-            <img src="img/berlin.svg"
-                alt="Colorful illustrated graphic showing three landmarks of Berlin in front of a sunny sky" />
-        </object> -->
 
     </main>
 

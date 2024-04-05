@@ -32,12 +32,10 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
     <!-- Font: Raleway, serif -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font: Lora, serif -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <!-- Font Awesome Icon Font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -50,28 +48,28 @@
     <header>
         <!-- Header has menu that becomes visible through toggle -->
         <div class="page-header__before-toogle">
-            <div>
+            <div class="site-logo">
                 <!--Webseite-Logo + Home-Button-->
-                <a href="index.html" class="site-logo" aria-label="Home-Button">
+                <a href="index.html" aria-label="Home-Button">
                     <img src="img/nicole-schimkus-logo.svg"
-                        alt="Personal logo of Nicole Schimkus, a simple logo made of lines that form the initials of my name">
+                        alt="Personal logo of Nicole Schimkus made of lines that form the initials N and S">
                 </a>
             </div>
-            <div>
+            <div class="test">
                 <!-- Toggle Menu on and off -->
-                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle"
-                    aria-label="button that toggles site navigation on and off">
-                <label for="site-nav__toggle" class="menu-toogle site-nav__toggle">menu<i class="fas"></i></label>
+                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle" role="checkbox"
+                    aria-label="toggles site navigation on and off">
+                <label for="site-nav__toggle" class="toogle-label site-nav__toggle">menu<i class="fas"></i></label>
             </div>
         </div>
-
 
         <!-- Page Navigation -->
         <nav class="site-nav">
             <ul role="menubar" class="site-nav__list">
                 <!--Homepage-->
                 <li role="presentation">
-                    <a href="index.html" role="menuitem" class="site-nav-list__item--active" data-text="Home" data-text-2="Home2">Home</a>
+                    <a href="index.html" role="menuitem" class="site-nav-list__item--active" data-text="Home"
+                        data-text-2="Home2">Home</a>
                 </li>
                 <!--Work page-->
                 <li role="presentation">
@@ -93,7 +91,7 @@
     <!-- MAIN CONTENT -->
     <main class="profile">
 
-        <!-- Handdrawn Circle for Decoration -->
+        <!-- Background image for Decoration -->
         <img src="img/circle_handdrawn.svg" class="circle" alt="Handdrawn circle for decoration" role="presentation">
         <!-- Portrait -->
         <figure class="profile-pic">
@@ -105,12 +103,18 @@
 
         <article>
             <!-- Welcome Text, Call to action: Skill-reel (preliminary: links will lead to different pages in the future)-->
-            <h1 class="skill-reel">Hej, my name is Nicole.<br>
-                I love to&nbsp;
-                <a href="work.html" class="skill1" aria-label="Link to go to #page" data-text="design.">design.</a>
-                <a href="work.html" class="skill2" aria-label="Link to go to #page" data-text="do research.">do
-                    research.</a>
-                <a href="work.html" class="skill3" aria-label="Link to go to #page" data-text="teach.">teach.</a>
+            <h1 class="skill-reel">Hej, my name is Nicole.<br class="remove-on-breakpoint">
+                I love to
+                <ul aria-label="List of skills">
+                    <li role="presentation"><a href="work.html" aria-label="Link to go to #page"
+                            data-text="design.">design.</a></li>
+                    <li role="presentation"><a href="work.html" aria-label="Link to go to #page" data-text="code.">code.</a>
+                    </li>
+                    <li role="presentation"><a href="work.html" aria-label="Link to go to #page" data-text="do research.">do
+                            research.</a></li>
+                    <li role="presentation"><a href="work.html" aria-label="Link to go to #page"
+                            data-text="teach.">teach.</a></li>
+                </ul>
             </h1>
         </article>
 
@@ -148,7 +152,7 @@
     </footer>
 
     <!-- Accessibility Check-->
-    <script src="js/tota11y.min.js"></script>
+    <!-- <script src="js/tota11y.min.js"></script> -->
 
 </body>
 

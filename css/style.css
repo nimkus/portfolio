@@ -1,7 +1,6 @@
 :root {
-    /* RESPONSIVE */
-
-    /* Break-Points */
+    /* Break-Points for responsive design */
+    --breakLarger: 1200px;
     --breakLarge: 768px;
     --breakMedium: 480px;
 
@@ -18,43 +17,57 @@
     /* base colors */
     --white: #fff;
     --gray-light: rgb(220, 220, 220);
-    --gray-lighter: rgb(245, 245, 245);
+    --gray-lighter: rgb(240, 240, 240);
     --gray-dark: rgb(86, 86, 86);
     --gray-transparent: rgba(0, 0, 0, 0.2);
     --black: #161c1d;
 
     /* FONTS */
+
+    /* Typeface */
     --font-h: "Yeseva One", serif;
     --font-p: "Raleway", sans-serif;
     --font-highlight: "Lora", serif;
+
+    /* font-sizes */
+    --size-h1: 2.5em;
+    --size-p: 1em;
 }
 
 /* --------------------------------------------------
      GENERAL
    ------------------------------------------------ */
-
 * {
-    /* Setting all sizes to border-box */
+    /* Setting all box-sizing on page to border-box */
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
+/* Every page is set up a grid with the content centred */
 body {
+    display: grid;
+    grid-template-rows: 1fr 10fr 1fr;
+    height: 100vh;
     background-color: var(--gray-lighter);
     font-family: var(--font-p);
+}
+
+main {
+    place-self: center;
 }
 
 /* TEXT */
 h1 {
     font-family: var(--font-h);
-    font-size: 2.5em;
+    font-size: var(--size-h1);
     font-style: normal;
     padding: 0;
     margin: 10px 20px 30px;
 }
 
 p {
+    font-size: var(--size-p);
     line-height: 1.5;
     padding: 0;
     margin: 0 20px 30px;
@@ -106,11 +119,16 @@ a:active {
 /* --------------------------------------------------
      MAIN NAVIGATION
    ------------------------------------------------ */
-header a {
+
+/* Custamizing general link appeareance for the header */
+header a,
+header a:hover,
+header a:focus {
     color: var(--black);
     text-transform: uppercase;
 }
 
+/* Header before toggle: site nav is hidden and can be opened via checkbox toggle */
 .page-header__before-toogle {
     display: flex;
     align-items: center;
@@ -126,37 +144,33 @@ header a {
     margin: 15px;
 }
 
-/* Site Navigation Toggle */
-.site-nav:has(.site-nav-list__item:focus),
+/* Header after toggle: site navigation overlay is triggered */
 .page-header__before-toogle:has(#site-nav__toggle:checked) ~ .site-nav {
     clip-path: circle(75%);
 }
 
-#site-nav__toggle {
-    display: none;
-}
-
-.menu-toogle {
+.site-nav__toggle {
     padding-top: 20px;
     padding-right: 20px;
     z-index: 2;
     position: relative;
 }
 
-#site-nav__toggle:checked ~ .menu-toogle {
+#site-nav__toggle:checked ~ .toogle-label {
     color: transparent;
 }
 
-#site-nav__toggle:checked ~ .menu-toogle i::before {
+#site-nav__toggle:checked ~ .toogle-label i::before {
     content: url("/img/x_handdrawn.svg") / "handdrawn x as close button";
     zoom: 3.5%;
 }
 
-/* Styles for Nav Items */
+/* Site nav: general styling */
 .site-nav {
     position: fixed;
-    display: grid;
-    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     top: 0;
     left: 0;
     right: 0;
@@ -170,14 +184,19 @@ header a {
     display: flex;
     flex-direction: column;
     flex: 0 1 auto;
-    justify-content: center;
     align-items: center;
     padding: 20px;
     font-size: 3.5em;
     line-height: 1.3;
     list-style-type: none;
+    font-weight: 600;
 }
 
+.site-nav-list__item {
+    position: relative;
+}
+
+/* Site nav: special styling for the currently active page */
 .site-nav-list__item--active {
     position: relative;
     font-family: "Lora", serif;
@@ -196,43 +215,20 @@ header a {
     transform: translate(-50%, -50%);
 }
 
-.site-nav-list__item {
-    position: relative;
-    font-weight: 600;
-}
-
-/* Text-Transformations on Hover */
-.site-nav-list__item:hover,
-.site-nav-list__item--active:hover,
-.site-nav-list__item--active:focus {
-    color: var(--black);
-}
-
+/* Site nav: text-transformation on hover and focus (general styling)
+    --> background fills and text appears on the side of link */
 .site-nav-list__item::before {
     content: attr(data-text);
     position: absolute;
     height: 0;
-    color: var(--black);
     background-color: var(--white);
     overflow: hidden;
-    transition: height 0.4s ease-in-out, border-bottom 0s 0.3s;
+    transition: height 0.4s ease-in-out;
 }
 
 .site-nav-list__item:hover::before,
 .site-nav-list__item:focus::before {
     height: 100%;
-
-    /* border-bottom: 2px solid var(--clr-highlight2); */
-}
-
-.site-nav-list__item--active:hover::after {
-    content: "current page";
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -90%);
-    margin-left: 16px;
-    font-size: 0.28em;
-    color: var(--clr-highlight3);
 }
 
 .site-nav-list__item:hover::after {
@@ -248,12 +244,59 @@ header a {
     font-weight: lighter;
 }
 
+/* Site nav: text-transformation on hover and focus (only for currently active page)
+    --> text color changes and text appears on the side of link */
+.site-nav-list__item--active:hover,
+.site-nav-list__item--active:focus {
+    color: var(--black);
+}
+
+.site-nav-list__item--active:hover::after {
+    content: "current page";
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -90%);
+    margin-left: 16px;
+    font-size: 0.28em;
+    color: var(--clr-highlight3);
+}
+
+/* Ensuring keyboard accessibility of site navigation
+    -->  making checkbox visible
+    --> disabling focus on all links that are not visible
+    Question for mentor: is this solution screen reader compatible? */
+.page-header__before-toogle:not(:has(#site-nav__toggle:checked)) ~ .site-nav {
+    visibility: hidden;
+}
+
+body:has(#site-nav__toggle:checked) > :not(header) * {
+    visibility: hidden;
+}
+
+body:has(#site-nav__toggle:checked) .site-logo * {
+    visibility: hidden;
+}
+
+#site-nav__toggle {
+    opacity: 0;
+}
+
+#site-nav__toggle:focus-visible,
+#site-nav__toggle:focus-visible:checked,
+#site-nav__toggle:focus-visible:checked ~ .toogle-label {
+    opacity: 100%;
+    color: var(--black);
+    visibility: visible;
+}
+
+#site-nav__toggle:focus-visible:checked ~ .toogle-label i::before {
+    display: none;
+}
+
 /* --------------------------------------------------
      FOOTER
    ------------------------------------------------ */
-
 .page-footer {
-    clear: both;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -263,7 +306,6 @@ header a {
 
 .social-list {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -289,97 +331,100 @@ header a {
    ------------------------------------------------ */
 
 /* ///// HOME-PAGE */
-
-/* Profile Container */
-.home-page {
-    display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
-    height: 100vh;
-}
-
 .profile {
-    place-self: center;
+    display: flex;
     max-width: var(--breakLarge);
     margin: 50px auto;
-    display: flex;
+    gap: 20px;
     align-items: center;
 }
 
 .circle {
     position: absolute;
+    max-width: 100vw;
+    padding: 10px;
     opacity: 50%;
-    max-width: 900px;
     z-index: -1;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 }
 
-.profile p {
-    font-family: var(--font-p);
-    font-weight: 800;
-    font-size: 2em;
-    font-style: normal;
+.profile h1 {
+    min-width: 250px;
 }
 
 /* Profile Picture */
 .profile-pic img {
-    margin: 20px 30px;
     max-width: 200px;
     border-radius: 50%;
 }
 
-/* Skill Reel, Text Animation */
+/* Skill Reel (Text Animation): a list of skills is shown one after another as clickable links */
+.skill-reel ul {
+    list-style: none;
+    display: inline-block;
+}
+
 .skill-reel a {
-    position: absolute;
+    position: relative;
     color: transparent;
 }
 
+/* Skill Reel: before pseudo element is used to create underline and fade-in animation */
 .skill-reel a::before {
     position: absolute;
-    box-sizing: content-box;
-    border-bottom: 8px solid var(--clr-highlight);
+    height: 0;
+    bottom: -8px;
     content: attr(data-text);
-    overflow: hidden;
+    color: var(--black);
+    border-bottom: 8px solid var(--clr-highlight);
     white-space: nowrap;
-    transition: background-color 0.5s ease-in-out, border-bottom 0.5s ease-in-out, color 0.1s;
+    overflow: hidden;
+    transition: background-color 0.5s, border-bottom 0.1s;
     animation: skill-underline 15s ease-in-out infinite;
-}
-
-.skill1 {
-    animation: skill1 15s infinite;
-}
-
-.skill2 {
-    animation: skill2 15s infinite;
-}
-
-.skill3 {
-    animation: skill3 15s infinite;
 }
 
 @keyframes skill-underline {
     0%,
     100% {
         width: 0;
-        color: transparent;
     }
 
-    5%,
-    28% {
+    4% {
         width: 100%;
-        color: transparent;
+        height: 0;
     }
 
-    15%,
-    23% {
-        color: var(--black);
+    10%,
+    15% {
+        height: 100%;
     }
 
-    33% {
+    21% {
+        width: 100%;
+        height: 0;
+    }
+
+    25% {
         width: 0;
-        color: transparent;
     }
+}
+
+.skill-reel li:nth-child(1) a {
+    animation: skill1 15s infinite;
+}
+
+.skill-reel li:nth-child(2) a {
+    animation: skill2 15s infinite;
+}
+
+.skill-reel li:nth-child(3) a {
+    animation: skill3 15s infinite;
+}
+
+.skill-reel li:nth-child(4) a {
+    animation: skill4 15s infinite;
 }
 
 @keyframes skill1 {
@@ -387,7 +432,7 @@ header a {
         display: inline;
     }
 
-    32%,
+    25%,
     100% {
         display: none;
     }
@@ -395,15 +440,15 @@ header a {
 
 @keyframes skill2 {
     0%,
-    33% {
+    25% {
         display: none;
     }
 
-    34% {
+    26% {
         display: inline;
     }
 
-    66%,
+    50%,
     100% {
         display: none;
     }
@@ -411,11 +456,27 @@ header a {
 
 @keyframes skill3 {
     0%,
-    66% {
+    50% {
         display: none;
     }
 
-    67% {
+    51% {
+        display: inline;
+    }
+
+    75%,
+    100% {
+        display: none;
+    }
+}
+
+@keyframes skill4 {
+    0%,
+    75% {
+        display: none;
+    }
+
+    76% {
         display: inline;
     }
 
@@ -424,24 +485,23 @@ header a {
     }
 }
 
-/* Animation on hover */
-.skill-reel a:focus::before,
-.skill-reel a:hover::before {
-    border-bottom: none;
-    background-color: var(--clr-highlight);
-    color: var(--white);
+/* Skill Reel: Animation stops on :hover and :focus */
+.skill-reel *:focus::before,
+.skill-reel *:hover::before {
+    height: 100%;
+    background-color: var(--white);
+    border-bottom: 8px solid var(--white);
     animation: none;
 }
 
-.skill-reel:has(a:hover) > *,
-.skill-reel:has(a:focus) > * {
+.skill-reel:has(li:hover:nth-child(n)) *,
+.skill-reel:has(li:focus-within:nth-child(n)) * {
     animation-play-state: paused;
 }
 
 /* ///// WORK-PAGE */
 
 /* Project-grid */
-
 .project-grid p {
     margin: 20px 0;
 }
@@ -452,12 +512,12 @@ header a {
     padding: 20px;
     width: 33%;
 }
-
 /* end grid fallback */
 
 @supports (display: grid) {
     .project-grid {
         display: grid;
+        max-width: var(--breakLarger);
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
         margin: 30px;
@@ -475,20 +535,9 @@ header a {
 }
 
 /* ///// ABOUT-PAGE */
-.about-page {
-    display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
-    height: 100vh;
-}
-
 .about-content {
-    place-self: center;
-    max-width: var(--breakLarge);
+    max-width: var(--breakLarger);
     margin: 0 auto;
-}
-
-.cv-table {
-    margin: 50px auto;
 }
 
 .cv-button {
@@ -497,73 +546,11 @@ header a {
     margin: 40px auto;
 }
 
-/* Animation: Sun (SVG Berlin) */
-.about-page object {
-    padding: 0 140px;
-}
-
-.sun {
-    animation-duration: 10s;
-    animation-name: color-change-sun;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-}
-
-@keyframes color-change-sun {
-    0% {
-        fill: var(--clr-base);
-    }
-
-    50% {
-        fill: var(--clr-highlight);
-    }
-
-    100% {
-        fill: var(--clr-accent);
-    }
-}
-
-/* Animation: Clouds (SVG Berlin) */
-
-.cloud-front {
-    animation: 30s cloud-move infinite alternate linear;
-}
-
-@keyframes cloud-move {
-    from {
-        transform: translate(0, 50px);
-    }
-
-    to {
-        transform: translate(200px, 50px);
-    }
-}
-
-.cloud-back {
-    animation: 34s cloud-move-reverse infinite alternate linear;
-}
-
-@keyframes cloud-move-reverse {
-    from {
-        transform: translate(446px, 48px);
-    }
-
-    to {
-        transform: translate(100px, 48px);
-    }
-}
-
 /* ///// CONTACT-PAGE */
-.contact-page {
-    display: grid;
-    grid-template-rows: 1fr 10fr 1fr;
-    height: 100vh;
-}
-
 .contact-content {
     max-width: var(--breakLarge);
     display: flex;
+    gap: 30px;
 }
 
 .contact-me-button {
@@ -572,17 +559,15 @@ header a {
 
 #contact-form {
     display: flex;
-    width: fit-content;
-    height: fit-content;
-    margin: 30px;
-    padding: 5px 30px 10px 20px;
     flex-direction: column;
+    padding: 5px 20px;
     background-color: var(--clr-base);
     color: var(--white);
+    border-radius: 2%;
 }
 
 #contact-form label {
-    padding: 20px 0 8px 2px;
+    padding: 20px 0 8px;
 }
 
 .contact-field {
@@ -590,9 +575,7 @@ header a {
 }
 
 .contact-form-button {
-    width: fit-content;
-    align-self: flex-end;
-    margin: 20px 0;
+    margin: 25px 0;
     border-radius: 300;
     background-color: var(--white);
     color: var(--clr-base);
@@ -601,20 +584,30 @@ header a {
 /* --------------------------------------------------
      MEDIA QUERIES
    ------------------------------------------------ */
-
-@media all and (max-width: var(--breakMedium)) {
+@media all and (max-width: 480px) {
     .project-grid {
         grid-template-columns: 1fr;
+        background-color: #07cadc;
+    }
+
+    .profile {
+        flex-direction: column;
+        font-size: small;
+    }
+
+    .circle,
+    .remove-on-breakpoint {
+        display: none;
     }
 }
 
-@media all and (min-width: var(--breakMedium)) and (max-width: var(--breakLarge)) {
+@media all and (min-width: 480px) and (max-width: 768px) {
     .project-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
 
-@media all and (max-width: var(--breakLarge)) {
+@media all and (max-width: 768px) {
     .project-grid {
         grid-gap: 20px;
     }
