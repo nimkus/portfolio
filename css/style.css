@@ -307,7 +307,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 .social-list {
     list-style-type: none;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     padding: 0;
@@ -361,7 +361,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 /* Welcome text */
 .profile article {
     min-width: 250px;
-} 
+}
 
 .profile h1 {
     display: inline;
@@ -373,6 +373,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 .skill-reel {
     display: inline-block;
     list-style-type: none;
+
     /* adapting paragraph to look like h1 */
     font-family: var(--font-h);
     font-size: var(--size-h1);
@@ -609,7 +610,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 
     .profile article {
         margin: 20px;
-    } 
+    }
 
     .circle,
     .remove-on-breakpoint {
