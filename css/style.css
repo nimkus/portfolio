@@ -50,7 +50,6 @@ body {
     grid-template-rows: 1fr 10fr 1fr;
     height: 100vh;
     background-color: var(--gray-lighter);
-    font-family: var(--font-p);
 }
 
 main {
@@ -59,18 +58,19 @@ main {
 
 /* TEXT */
 h1 {
-    font-family: var(--font-h);
-    font-size: var(--size-h1);
-    font-style: normal;
     padding: 0;
     margin: 10px 20px 30px;
+    font-family: var(--font-h);
+    font-size: var(--size-h1);
+    color: var(--black);
 }
 
 p {
-    font-size: var(--size-p);
-    line-height: 1.5;
     padding: 0;
     margin: 0 20px 30px;
+    font-size: var(--size-p);
+    line-height: 1.5;
+    color: var(--black);
 }
 
 /* BUTTONS */
@@ -305,8 +305,9 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 }
 
 .social-list {
+    list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: center;;
     align-items: center;
     flex-wrap: wrap;
     padding: 0;
@@ -339,6 +340,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
     align-items: center;
 }
 
+/* background image for decoration */
 .circle {
     position: absolute;
     max-width: 100vw;
@@ -350,20 +352,30 @@ body:has(#site-nav__toggle:checked) .site-logo * {
     transform: translate(-50%, -50%);
 }
 
-.profile h1 {
-    min-width: 250px;
-}
-
 /* Profile Picture */
 .profile-pic img {
     max-width: 200px;
     border-radius: 50%;
 }
 
+/* Welcome text */
+.profile article {
+    min-width: 250px;
+} 
+
+.profile h1 {
+    display: inline;
+    margin: 0;
+    margin-right: 6px;
+}
+
 /* Skill Reel (Text Animation): a list of skills is shown one after another as clickable links */
-.skill-reel ul {
-    list-style: none;
+.skill-reel {
     display: inline-block;
+    list-style-type: none;
+    /* adapting paragraph to look like h1 */
+    font-family: var(--font-h);
+    font-size: var(--size-h1);
 }
 
 .skill-reel a {
@@ -375,7 +387,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
 .skill-reel a::before {
     position: absolute;
     height: 0;
-    bottom: -8px;
+    bottom: -10px;
     content: attr(data-text);
     color: var(--black);
     border-bottom: 8px solid var(--clr-highlight);
@@ -595,6 +607,10 @@ body:has(#site-nav__toggle:checked) .site-logo * {
         font-size: small;
     }
 
+    .profile article {
+        margin: 20px;
+    } 
+
     .circle,
     .remove-on-breakpoint {
         display: none;
@@ -605,9 +621,13 @@ body:has(#site-nav__toggle:checked) .site-logo * {
     .project-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+    .remove-on-breakpoint {
+        display: none;
+    }
 }
 
-@media all and (max-width: 768px) {
+@media all and (min-width: 768px) {
     .project-grid {
         grid-gap: 20px;
     }
