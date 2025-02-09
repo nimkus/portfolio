@@ -1,150 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Set Character set to current industry standart-->
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <!-- Force current version of IE for better compatibility -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Match window size to device and resets pixel size for retina-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nicole Schimkus</title>
-    <link rel="shortcut icon" href="img/nicole-schimkus-logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="img/nicole-schimkus-logo.svg" type="image/x-icon" />
 
     <!-- STYLESHEETS -->
     <!-- Normalizing CSS & Style Sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
 
     <!-- FONTS -->
     <!-- The Link Type rel="preconnect" is used so that the linked content can be fetched more quickly. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <!-- Font: Yeseva, serif / Font: Roboto, serif / Font: Raleway, serif / Lora, serif -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
     <!-- Font Awesome Icon Font -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- PAGE HEADER -->
     <header>
-        <!-- Header has menu that becomes visible through toggle -->
-        <div class="page-header__before-toogle">
-            <div class="site-logo">
-                <!--Webseite-Logo + Home-Button-->
-                <a href="index.html" aria-label="Home-Button">
-                    <img src="img/nicole-schimkus-logo.svg"
-                        alt="Personal logo of Nicole Schimkus made of lines that form the initials N and S">
-                </a>
-            </div>
-            <div class="test">
-                <!-- Toggle Menu on and off -->
-                <input type="checkbox" class="site-nav__toggle" id="site-nav__toggle"
-                    aria-label="toggles site navigation on and off">
-                <label for="site-nav__toggle" class="toogle-label site-nav__toggle">menu<i class="fas"></i></label>
-            </div>
+      <!-- Header has menu that becomes visible through toggle -->
+      <div class="page-header__before-toogle">
+        <div class="site-logo">
+          <!--Webseite-Logo + Home-Button-->
+          <a href="index.html" aria-label="Home-Button">
+            <img
+              src="img/nicole-schimkus-logo.svg"
+              alt="Personal logo of Nicole Schimkus made of lines that form the initials N and S"
+            />
+          </a>
         </div>
+        <div class="test">
+          <!-- Toggle Menu on and off -->
+          <input
+            type="checkbox"
+            class="site-nav__toggle"
+            id="site-nav__toggle"
+            aria-label="toggles site navigation on and off"
+          />
+          <label for="site-nav__toggle" class="toogle-label site-nav__toggle">menu<i class="fas"></i></label>
+        </div>
+      </div>
 
-        <!-- Page Navigation -->
-        <nav class="site-nav">
-            <ul role="menubar" class="site-nav__list">
-                <!--Homepage-->
-                <li role="presentation">
-                    <a href="index.html" role="menuitem" class="site-nav-list__item" data-text="Home">Home</a>
-                </li>
-                <!--Work page-->
-                <li role="presentation">
-                    <a href="work.html" role="menuitem" class="site-nav-list__item" data-text="Work">Work</a>
-                </li>
-                <!--About page-->
-                <li role="presentation">
-                    <a href="about.html" role="menuitem" class="site-nav-list__item" data-text="About Me">About
-                        Me</a>
-                </li>
-                <!--Contact page-->
-                <li role="presentation">
-                    <a href="contact.html" role="menuitem" class="site-nav-list__item--active"
-                        data-text="Contact">Contact</a>
-                </li>
-            </ul>
-        </nav>
+      <!-- Page Navigation -->
+      <nav class="site-nav">
+        <ul role="menubar" class="site-nav__list">
+          <!--Homepage-->
+          <li role="presentation">
+            <a href="index.html" role="menuitem" class="site-nav-list__item" data-text="Home">Home</a>
+          </li>
+          <!--Work page-->
+          <li role="presentation">
+            <a href="work.html" role="menuitem" class="site-nav-list__item" data-text="Work">Work</a>
+          </li>
+          <!--About page-->
+          <li role="presentation">
+            <a href="about.html" role="menuitem" class="site-nav-list__item" data-text="About Me">About Me</a>
+          </li>
+          <!--Contact page-->
+          <li role="presentation">
+            <a href="contact.html" role="menuitem" class="site-nav-list__item--active" data-text="Contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="contact-content">
-        <div>
-            <h1>Get in touch</h1>
+      <div>
+        <h1>Get in touch</h1>
 
-            <!--Contact information-->
-            <p>
-                <!--to-do: research ways to protect personal data on my website from attracting spam-->
-                Nicole Schimkus<br>
-                Street Number<br>
-                00000 Berlin<br>
-                Germany<br>
-                <br>
-                Phone <a href="tel:+493048492016" aria-label="telephone number">+49 30 4849 2016</a><br>
-                Skype <a href="skype:hello.careerfoundry">skype-handle</a><br>
-                Mail <a href="mailto:nicoleschimkus@gmail.com">nicoleschimkus@gmail.com</a>
-            </p>
+        <!--Contact information-->
+        <p>
+          <!--to-do: research ways to protect personal data on my website from attracting spam-->
+          Nicole Schimkus<br />
+          Street Number<br />
+          00000 Berlin<br />
+          Germany<br />
+          <br />
+          Phone <a href="tel:+493048492016" aria-label="telephone number">+49 30 4849 2016</a><br />
+          Mail <a href="mailto:nimkus2000@gmail.com">nicoleschimkus@gmail.com</a>
+        </p>
 
-            <!--Call to Action-->
-            <a href="mailto:nicoleschimkus@gmail.com" class="button contact-me-button">Contact me</a>
-        </div>
+        <!--Call to Action-->
+        <a href="mailto:nicoleschimkus@gmail.com" class="button contact-me-button">Contact me</a>
+      </div>
 
-        <!-- Contact Form-->
-        <form action="" method="post" id="contact-form">
-            <label class="standart-label" for="contact-email">Email:</label>
-            <input type="email" id="contact-email" class="contact-field" required>
+      <!-- Contact Form-->
+      <form action="" method="post" id="contact-form">
+        <label class="standart-label" for="contact-email">Email:</label>
+        <input type="email" id="contact-email" class="contact-field" required />
 
-            <label class="standart-label" for="contact-tel">Phone:</label>
-            <input type="tel" id="contact-tel" class="contact-field">
-            <!--pattern="^[0-9]+$" means only numbers
+        <label class="standart-label" for="contact-tel">Phone:</label>
+        <input type="tel" id="contact-tel" class="contact-field" />
+        <!--pattern="^[0-9]+$" means only numbers
                 Checkout https://www.html5pattern.com/ for more patterns-->
 
-            <label class="standart-label" for="contact-message">Message:</label>
-            <textarea id="contact-message" class="contact-field" required maxlength="300" rows="8" cols="30"></textarea>
-            <input type="submit" class="button contact-form-button" value="Send message">
-        </form>
+        <label class="standart-label" for="contact-message">Message:</label>
+        <textarea id="contact-message" class="contact-field" required maxlength="300" rows="8" cols="30"></textarea>
+        <input type="submit" class="button contact-form-button" value="Send message" />
+      </form>
     </main>
 
     <!-- FOOTER -->
     <footer class="page-footer">
-        <!--Link list, Socials-->
-        <p>Find me on</p>
-        <ul class="social-list" aria-label="List of social media accounts">
-            <li class="social-list__item" role="presentation">
-                <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Link to my Github account">
-                    <!-- Github logo -->
-                    <img src="img/icon_github.svg" alt="Logo of Github">
-                </a>
-            </li>
+      <!--Link list, Socials-->
+      <p>Find me on</p>
+      <ul class="social-list" aria-label="List of social media accounts">
+        <li class="social-list__item" role="presentation">
+          <a href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Link to my Github account">
+            <!-- Github logo -->
+            <img src="img/icon_github.svg" alt="Logo of Github" />
+          </a>
+        </li>
 
-            <li class="social-list__item" role="presentation">
-                <a href="https://twitter.com/nicoleschimkus" target="_blank" rel="noreferrer"
-                    aria-label="Link to my Twitter account">
-                    <!-- Twitter logo -->
-                    <img src="img/icon_twitter.svg" alt="Logo of Twitter">
-                </a>
-            </li>
+        <li class="social-list__item" role="presentation">
+          <a
+            href="https://twitter.com/nicoleschimkus"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Link to my Twitter account"
+          >
+            <!-- Twitter logo -->
+            <img src="img/icon_twitter.svg" alt="Logo of Twitter" />
+          </a>
+        </li>
 
-            <li class="social-list__item" role="presentation">
-                <a href="https://www.linkedin.com/in/nicole-schimkus/" rel="noreferrer"
-                    aria-label="Link to my LinkedIn account">
-                    <!-- LinkedIn logo -->
-                    <img src="img/icon_linkedin.svg" alt="Logo of LinkedIn">
-                </a>
-            </li>
-        </ul>
+        <li class="social-list__item" role="presentation">
+          <a
+            href="https://www.linkedin.com/in/nicole-schimkus/"
+            rel="noreferrer"
+            aria-label="Link to my LinkedIn account"
+          >
+            <!-- LinkedIn logo -->
+            <img src="img/icon_linkedin.svg" alt="Logo of LinkedIn" />
+          </a>
+        </li>
+      </ul>
     </footer>
-
-</body>
-
+  </body>
 </html>
