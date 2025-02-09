@@ -714,6 +714,7 @@ body:has(#site-nav__toggle:checked) .site-logo * {
   height: auto;
   border-radius: 8px;
   margin-bottom: 15px;
+  object-fit: cover;
 }
 
 .project-grid p {
